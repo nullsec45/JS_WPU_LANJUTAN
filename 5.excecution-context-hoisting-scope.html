@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// console.log(nama);
+// let nama='Rama';
+
+/*Creation phase pada Global Context
+-Javascript secara default akan memberi value pada variable
+ berupa undefined -> nama_var=undefined
+-Javascript secara default mengisi function dengan function itu sendiri -> namaFunction=fn();
+-Hoisting
+-window=global object
+-this=window
+*/
+// console.log(sayHello());
+
+// let nama="Rama";
+// let umur=19;
+
+// function sayHello(){
+//     return `HALO NAMA SAYA ${nama}, SAYA BERUMUR ${umur} tahun`;
+// }
+
+// hoisting
+// let name="Rama Fajar";
+// let username="@ramarff";
+
+// function cetakURL(username){
+//     let instagramURL="https://instagram.com/";
+//     return instagramURL+username;
+// }
+// console.log(cetakURL(username));
+
+// hoisting
+// function a(){
+//     console.log("ini a");
+
+//     function b(){
+//         console.log("ini b");
+
+//         function c(){
+//             console.log("ini c");
+//         }
+//         c();
+//     }
+//     b();
+// }
+// a();
+
+// scope
+let name="Rama Fajar";
+let username="ramarff";
+
+function cetakURL(){
+    // walau function tidak mempunyai parameter. Namun, memiliki arguments. Argument tersebut bisa diambil
+    // dari object bernama "arguments"
+    const ar=arguments;
+    console.log(ar); 
+    // Dalam memanggil variable, javascript akan mencari scope yang terdekat dahulu. Jika di dalam function tidak ada
+    // maka javascipt akan mencari di parameter, jika tidak ada lagi maka akan mencari di global scope. Jika tidak ada lagi
+    // maka undefined.
+    let instagramURL="https://instagram.com/";
+    return instagramURL+username;
+}
+console.log(cetakURL("toomefai"));
+
+function satu(){
+    var nama="Rama";
+    console.log(nama);
+}
+
+function dua(){
+    console.log(nama);
+}
+
+console.log(nama);
+var nama="Fajar";
+satu();
+dua("Fadhillah");
+console.log(nama);
+</script>
+</body>
+</html>
