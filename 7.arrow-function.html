@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// Function Expression
+// const tampilNama=function(nama){
+//     return `Halo, ${nama}`;
+// }
+// console.log(tampilNama("rama"));
+
+// Arrow Function
+// 1 parameter
+const tampilNama=(nama) => {
+    return `Halo, ${nama}`;
+}
+console.log(tampilNama("rama"));
+
+// lebih dari 1 parameter
+const ucapkan=(nama, waktu, makanan) => {
+    return `Halo tuan ${nama}, selamat ${waktu}. Makanan ${makanan} sudah dihidangkan di meja makan`;
+}
+console.log(ucapkan("rama", "pagi","nasi goreng"));
+
+// jika hanya memiliki 1 parameter dan hanya return saja. 
+// Tidak usah menggunakan tutup kurung dan kurung kurawal
+// implisit return
+const sayHello=nama => `Helo ${nama}`;
+console.log(sayHello("rama"));
+
+const helloWorld=() => `Hello world`;
+console.log(helloWorld());
+
+// penerapan arrow function di dalam sebuah studi kasus
+let mahasiswa=["rama","fajar","fadhillah"];
+
+// menggunakan arrow function lebih ringkas dibanding menggunakan function biasa
+let jmlhHuruf=mahasiswa.map(nama => nama.length);
+console.log(jmlhHuruf);
+
+// Jika ingin mengembalikan dalam bentuk objek. Objek tersebut harus dikurung terlebih dahulu
+// Jika tidak arrow function akan menganggap bahwa function akan mengembalikan nilai seperti biasanya
+let objJmlhHuruf=mahasiswa.map(nama => ({nama, jumlah:nama.length}));
+console.log(objJmlhHuruf);
+</script>
+</body>
+</html>
