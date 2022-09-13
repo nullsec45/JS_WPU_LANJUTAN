@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter, Map, dan Reduce</title>
+</head>
+<body>
+<script>
+const angka=[1,2,3,4,5,6,7,8,9,10];
+
+// mencari angka >= 3 dengan for
+// const newAngka=[];
+// for(let i=0;i<angka.length;i++){
+//     if(angka[i] >= 3){
+//         newAngka.push(angka[i]);
+//     }
+// }
+
+// mencari angka >= 3 dengan filter
+// const newAngka=angka.filter(a => a >= 3);
+// console.log(newAngka);
+
+// map -> kalikan semua angka dengan 2
+const newAngka=angka.map(a => a*2);
+console.log(newAngka)
+
+// reduce -> jumlahkan seluruh elemen pada array
+// array.reduce((accumulator, currentValue) => do something, firstValue);
+const tambahAngka=angka.reduce((accumulator, currentValue) => accumulator+currentValue);
+console.log(tambahAngka);
+
+// Method chaining = menggabungkan beberapa method 
+// Cari angka > 5, kalikan 5, dan jumlahkan
+const hasil=angka.filter(a => a > 5)
+                 .map(a => a * 3)
+                 .reduce((acc, cur) => acc + cur);
+console.log(hasil);
+</script>
+</body>
+</html>
