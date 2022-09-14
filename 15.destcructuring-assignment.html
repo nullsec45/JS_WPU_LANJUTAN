@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Assignment</title>
+</head>
+<body>
+<script>
+/*
+Desctructuring Assignment adalah expression pada javascript yang membuat kita dapat membongkar nilai dari array atau
+properti dari object ke dalam variable yang terpisah
+*/
+
+// Destructuring variable/assginment
+// Destructuring Array
+
+// const nama=["rama","fajar","fadhillah"];
+
+// const [namaDepan, namaTengah, namaBelakang]=nama;
+// console.log(`${namaDepan} ${namaTengah} ${namaBelakang}`);
+
+// skipping items
+// const [namaDepan, , namaBelakang]=nama;
+// console.log(namaBelakang);
+
+// swap items
+// let a=1;
+// let b=2;
+// console.log(a);
+// console.log(b);
+
+// [a,b]=[b,a];
+// console.log(a);
+// console.log(b);
+
+// return value pada function
+// function coba(){
+//     return [1,2];
+// }
+// const [a,b]=coba();
+// console.log(b)
+
+// Rest Parameter
+// const [a,...values]=[1,2,3,4,5,6,7,8,9,10];
+// values.forEach(angka => console.log(angka));
+
+// Destructuring Object
+// const mhs={
+//     nama:"Rama Fajar Fadhillaj",
+//     umur:19,
+//     email:"ramafajar805@gmail.com"
+// }
+// const {nama, umur, email}=mhs;
+// console.log(email)
+
+// Assignment tanpa deklarasi object
+// ({nama, umur}={
+//     nama:"rama fajar",
+//     umur:19,
+//     email:"ramafajar805@gmail.com"
+// });
+// console.log(nama);
+
+// Assignment ke variable baru
+// const makanan={
+//     nama:"Soto Betawi",
+//     asal:"Jakarta"
+// }
+// const {nama:n, asal:a}=makanan;
+// console.log(n);
+
+// Memberikan Default Value 
+// const medsos={
+//     instagram:"ramarff.me/instagram",
+//     github:"ramarff.me/github",
+//     medium:"ramarff.me/medium"
+// }
+// const {instagram, github, medium, linkedin="ramarff.me/linkedin"}=medsos;
+// console.log(linkedin);
+
+
+// Memberikan Default Value + assign ke variable baru
+// const medsos={
+//     instagram:"ramarff.me/instagram",
+//     github:"ramarff.me/github",
+//     medium:"ramarff.me/medium"
+// }
+// const {instagram, github, medium, linkedin:l="ramarff.me/linkedin"}=medsos;
+// console.log(l);
+
+// Rest Paramter
+// const medsos={
+//     instagram:"ramarff.me/instagram",
+//     github:"ramarff.me/github",
+//     medium:"ramarff.me/medium"
+// }
+// const {instagram, ...values}=medsos;
+// console.log(values);
+
+// Mengambil field pada object, setelah dikirim sebagai parameter untuk function
+const makanan={
+    nama:"Soto Betawi",
+    asal:"Jakarta"
+}
+
+function getNamaMakan({nama}){
+    return nama;
+}
+console.log(getNamaMakan(makanan));
+</script>
+</body>
+</html>
