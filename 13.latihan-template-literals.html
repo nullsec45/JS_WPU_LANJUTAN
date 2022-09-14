@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Template Literals</title>
+</head>
+<body>
+<script>
+// HTML Fragments
+// const mhs={
+//     nama:"Rama Fajar Fadhillah",
+//     umur:19,
+//     nim:12345678,
+//     email:"ramafajar805@gmail.com"
+// }
+// const el=`<div class="mhs">
+//             <h2>${mhs.nama}</h2>
+//             <span class="nim">${mhs.nim}</span>
+//           </div>
+// `;
+
+// looping
+// const mhs=[
+//     {
+//         nama:"Rama Fajar Fadhillah",
+//         email:"ramafajar805@gmail.com"
+//     },
+//     {
+//         nama:"Fatimah Aznur",
+//         email:"anafath@gmail.com"
+//     },
+//     {
+//         nama:"Erik",
+//         email:"erik@unpas.ac.id"
+//     }
+// ];
+
+// const el=`<div class="mhs">
+//             ${mhs.map(m => `
+//                          <ul>
+//                             <li>${m.nama}</li>
+//                             <li>${m.email}</li>
+//                         </ul>           
+//             `).join("")} 
+//           </div>
+// `;
+
+// conditionals
+// const lagu=[
+//     {
+//         judul:"Tetap dalam jiwa",
+//         penyanyi:"Isyana Sarasvati",
+//     },
+//     {
+//         judul:"Kau adalah",
+//         penyanyi:"Isyana Sarasvati",
+//         feat:"Rayi Putra"
+//     }
+// ];
+// const el=`<div class="lagu">
+//             ${lagu.map(l => `
+//                          <ul>
+//                             <li>${l.judul}</li>
+//                             <li>${l.penyanyi} ${l.feat ? `(feat. ${l.feat})` : ""}</li>
+//                         </ul>           
+//             `).join("")} 
+//           </div>
+// `;
+
+// HTML Fragment Bersarang
+function cetakMataKuliah(mataKuliah){
+    return `${mataKuliah.map(mk => `<li>${mk}</li>`).join("")}`;
+}
+const mhs={
+    nama:"Rama Fajar F",
+    semester:3,
+    mataKuliah:["Keamanan Web","Big Data","Admnistrasi Jaringan"]
+}
+const el=`
+        <div class="mhs">
+            <h2>${mhs.nama}</h2>
+            <span class="semester">Semester:${mhs.semester}</span>
+            <h4>Mata Kuliah:</h4>
+            ${cetakMataKuliah(mhs.mataKuliah)}
+        </div>
+`;
+document.body.innerHTML=el;
+</script>
+</body>
+</html>
