@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Assignment</title>
+</head>
+<body>
+<script>
+// Destructuring Function
+// array
+// function kalkulasi(a,b){
+//     return [a*b, a/b, a+b, a-b];
+// }
+
+// const [jumlah, kali]=kalkulasi(2,3);
+
+// const [kali, bagi, tambah="Tidak ada", kurang]=kalkulasi(3,3);
+// console.log(kali);
+
+// objek
+function kalkulasi(a,b){
+    return {
+        kali:a*b,
+        bagi:a/b,
+        tambah:a+b,
+        kurang:a-b
+    }
+}
+const {kurang, tambah, kali,bagi}=kalkulasi(9,9);
+console.log(kali);
+
+// Destructuring function argument
+const mhs1={
+    nama:"Rama Fajar Fadhillah",
+    umur:19,
+    email:"ramafajar805@gmail.com",
+    nilai:{
+        tugas:100,
+        uas:90,
+        uts:100
+    }
+}
+function cetakMhs({nama, umur, nilai:{tugas,uas, uts}}){
+    return `Halo, nama saya ${nama} dan umur saya ${umur} tahun. Nilai UAS: ${uas}`;
+}
+console.log(cetakMhs(mhs1));
+</script>
+</body>
+</html>
