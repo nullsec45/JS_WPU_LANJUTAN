@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Template Literals</title>
+    <style>
+        .hl{
+            background-color: salmon;
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+<script>
+/*
+Tagged Template Literal
+Bentuk yang lebih kompleks dari Template Literals, memungkinkan kita untuk membaca template literals melalui sebuah
+function.
+
+Penggunaan Tagged Template
+*Escaping HTML Tags
+*Translation & Internationalization
+*Styled Components
+
+*/
+// const nama="Rama Fajar Fadhillah";
+// const umur=19;
+
+// function coba(strings, ...values){
+//     // let result="";
+//     // strings.forEach((str,i) => {
+//     //     result+=`${str} ${values[i] || ""}`;
+//     // });
+//     // return result;
+
+//     return strings.reduce((result, str, i) => `${result}${str}${values[i] || ""}`,"");
+// }
+// const str=coba`Halo, nama saya ${nama}, saya ${umur} tahun`;
+// console.log(str);
+
+// Highlight
+const nama="Rama Fajar Fadhillah";
+const umur=19;
+const email="ramafajar805@gmail.com"
+
+function highlight(strings, ...values){
+    return strings.reduce((result, str, i) => `${result}${str}<span class="hl">${values[i] || ""}</span>`,"");
+}
+const str=highlight`Halo, nama saya ${nama}, saya ${umur} tahun dan email saya ${email}`;
+
+document.body.innerHTML=str;
+</script>
+</body>
+</html>
