@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Assignment</title>
+    <style>
+        body{
+            background-color: salmon;
+        }
+        .stringNama{
+            font-family: arial;
+            font-size: 80px;
+            color:white;
+            text-align: center;
+        }
+        .stringNama span{
+            display: inline-block;
+            transition: .3s;
+            cursor: pointer;
+        }
+        .stringNama span:hover{
+            transform: scale(2) translateY(-20px);
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="nama">Rama</li>
+    <li class="nama">Fajar</li>
+    <li class="nama">Fadhillah</li>
+</ul>
+<h1 class="stringNama">FAJAR</h1>
+<script>
+//Spread operator -> Memecah iterables menjadi single element
+const mhs=["rama","fatimah","paizal","fiqri","fikri","fahmi","angga"];
+// console.log(...mhs);
+
+// Menggabungkan dua array
+const dosen=["Ahmad Rio","Sirojul Munir","Sapto Waluyo","Lukman Rosyidi"];
+const gabung=[...mhs, ...dosen];
+console.log(gabung);
+
+// Menyalin array
+// Jika menggunakan spread operator untuk menyalin arraynya. 
+// Ketika array aslinya diubah, array salinannya tidak ikut keubah
+
+const dosenCopy=[...dosen];
+dosen[0]="Entong";
+console.log(dosenCopy);
+
+// Mengubah Node List menjadi Array
+const nama=[...document.querySelectorAll(".nama")];
+nama.map(n => console.log(n.textContent));
+
+const stringNama=document.querySelector(".stringNama");
+const huruf=[...stringNama.textContent].map(huruf => `<span>${huruf}</span>`).join("");
+stringNama.innerHTML=huruf;
+</script>
+</body>
+</html>
