@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Assignment</title>
+</head>
+<body>
+<ul>
+    <li class="nama">Rama</li>
+    <li class="nama">Fajar</li>
+    <li class="nama">Fadhillah</li>
+</ul>
+<script>
+// for..of dan for..in
+
+
+// for..of adalah perulangan yang bisa mengulang objek-objek yang bersifat iterable
+// Objek iterable :string, array, arguments/nodelist,typedarray,map,set,user-defined iterables.
+const mhs=["rama","fatimah","paizal","fiqri","fikri","fahmi","angga"];
+
+// looping array
+// for(const m of mhs){
+//     console.log(m);
+// }
+
+// String
+// const nama="Rama Fajar Fadhillah";
+// for(const n of nama){
+//     console.log(n);
+// }
+
+// Secara default for...of tidak mempunyai index, jika ingin memanggil indexnya. Menggunakan method entries();
+for(const [i, m] of mhs.entries()){
+    console.log(`Mahasiswa ke ${i+1} : ${m}`);
+}
+
+// Node List
+const liNama=document.querySelectorAll(".nama");
+// console.log(liNama);
+for(n of liNama){
+    console.log(n.textContent);
+}
+
+// Arguments
+function jumlahkanAngka(){
+    let result=0;
+    for(let angka of arguments){
+        result+=angka;
+    }
+    return result;
+}
+console.log(jumlahkanAngka(1,2,3,4,5,6,7,8,9,10));
+
+// for..in adalah perulangan yang bisa mengulang objek-objek yang bersifat enumerable (properti objek)
+const kendaraan={
+    nama:"Mobil Tesla",
+    roda:4,
+    bahanBakar:"Listrik"
+}
+
+for(k in kendaraan){
+    console.log(`${k}:${kendaraan[k]}`);
+}
+</script>
+</body>
+</html>
