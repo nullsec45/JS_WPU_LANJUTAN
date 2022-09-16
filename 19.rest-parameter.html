@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Parameter</title>
+</head>
+<body>
+
+<script>
+// Rest parameter
+// Merepresentasikan argument pada function dengan jumlah yang tidak terbatas menjadi sebuah array
+
+function angka(...args){
+    return args;
+    // return [...arguments];
+}   
+console.log(angka(1,2,3,4,5,6,7,8,9,10));
+
+function jumlahkan(...args){
+    let total=0;
+
+    // for(const a of args){
+    //     total+=a;
+    // }
+    // return total;
+    
+    return args.reduce((a,b) => a+b);
+}
+console.log(jumlahkan(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15));
+
+// array destructuring
+const kelompok1=["entong","joko","joni","jajang","dudung"];
+const [ketua, wakil, sekretaris, ...anggota]=kelompok1;
+console.log(ketua);
+
+// object desturucturing
+const team={
+    pm:"rama",
+    be:"fajar",
+    fe:"fadhillah"
+}
+const {pm,...myTeam}=team;
+console.log(myTeam);
+
+// filtering
+function filterBy(type, ...values){
+    return values.filter(v => typeof v === type);
+}
+console.log(filterBy("number", 1,2,3,4, true, "rama","fajar","fadhillah", false));
+</script>
+</body>
+</html>
