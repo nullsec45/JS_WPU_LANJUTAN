@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+Callback adalah function yang dikirimkan sebagai parameter pada function yang lain
+Callback adalah function yang dieksekusi setelah fungsi lain selesai dijalankan
+*/
+// Synchronous callback
+// function halo(nama){
+//     alert(`Halo ${nama}`);
+// }
+
+// function tampilkanPesan(callback){
+//     const nama=prompt(`Masukkan Nama :`);
+//     callback(nama);
+// }
+// tampilkanPesan(halo);
+
+// tampilkanPesan(nama => alert(`Halo, ${nama}`));
+
+// Synchronous Callback
+const mhs=[{
+    "nama" : "Rama Fajar Fadhillah",
+    "nim" : "12345678",
+    "email" : "ramafajar805@gmail.com",
+    "jurusan" : "Teknik Informatika"
+},
+{
+    "nama" : "Entong Junaedi",
+    "nim" : "12345679",
+    "email" : "entong77@gmail.com",
+    "jurusan" : "Teknik Nuklir"
+}];
+console.log("mulai");
+mhs.forEach(m => console.table(m.nama));
+console.log("selesai");
+
+// Asynchoronous Callback
+function getDataMahasiswa(url, success, error){
+    let xhr=new XMLHttpRequest();
+
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState === 4){
+            success(xhr.response);
+        }else if(xhr.status === 404){
+            error();
+        }
+    }
+    xhr.open("get", url);
+    xhr.send();
+}
+getDataMahasiswa("data/mahasiswa.json", ( results => {
+    const mhs=JSON.parse(results);
+    mhs.forEach(m => console.log(`${m.nama}, ${m.email}`));
+}), () => console.log("error"));
+</script>
+</body>
+</html>
